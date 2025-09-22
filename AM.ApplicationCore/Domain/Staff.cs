@@ -10,6 +10,12 @@ namespace AM.ApplicationCore.Domain
     {
         public DateTime EmployementDate { get; set; }
         public string function { get; set; }
-        public float salary { get; set; }
+        public double Salary { get; set; }
+
+        override
+            public void PassengerType()
+        {
+            Console.WriteLine("I am a staff");
+        }
     }
 }

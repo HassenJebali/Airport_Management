@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Domain
 {
-    internal class Traveller :Passenger 
+    public class Traveller :Passenger 
     {
-        public int HealthInformation { get; set; }
+        public String HealthInformation { get; set; }
         public string Nationality { get; set; }
+
+        override
+            public void PassengerType() {
+            Console.WriteLine("I am a traveller");
+        }
     }
 }

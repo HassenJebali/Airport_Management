@@ -1,2 +1,57 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+
+using System.ComponentModel.DataAnnotations;
+using AM.ApplicationCore.Domain;
+//using AM.ApplicationCore.Services;
+/*
+Plane plane = new Plane();
+plane.planeType = PlaneType.Airbus;
+plane.Capacity = 200;
+plane.ManufactureDate = new DateTime(2018, 11, 10);
+Console.WriteLine(plane.ToString());
+
+Console.WriteLine("2éme méthode");
+
+
+Plane plane2 = new Plane
+{
+    planeType = PlaneType.Airbus,
+    Capacity = 150,
+    ManufactureDate = new DateTime(2015, 02, 03)
+};
+
+Console.WriteLine(plane2.ToString());
+Console.WriteLine("3eme méthode");
+
+Plane plane3 = new Plane(300,DateTime.Now ,PlaneType.Boing);
+Console.WriteLine(plane3.ToString());
+Console.ReadLine();*/
+
+
+Passenger P1 = new Passenger
+{ FirstName = "steve", LastName = "jobs", EmailAdress = "steve.jobs@000.us" };
+Console.WriteLine("La méthode passenger");
+Console.WriteLine(P1.CheckProfile("steve", "jobs"));
+Console.WriteLine(P1.CheckProfile("steve","jobs",""));
+
+Staff s1 = new Staff
+{
+    FirstName = "steve",
+    LastName = "jobs",
+    EmailAdress = "steve.jobs@000.us"
+};
+
+Traveller t1 = new Traveller
+{
+    FirstName = "steve",
+    LastName = "jobs",
+    EmailAdress = "steve.jobs@000.us"
+};
+
+Console.WriteLine("-----P1------");
+P1.PassengerType();
+Console.WriteLine("-------S1----");
+s1.PassengerType();
+Console.WriteLine("------T1-----");
+t1.PassengerType();
+Console.ReadLine();

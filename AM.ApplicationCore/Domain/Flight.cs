@@ -9,7 +9,7 @@ namespace AM.ApplicationCore.Domain
     public class Flight
     {
 
-        public string Destinaton { get; set; }
+        public String Destination { get; set; }
 
         public int MyProperty { get; set; }
         public DateTime Deparature { get; set; }

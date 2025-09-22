@@ -12,6 +12,8 @@ namespace AM.ApplicationCore.Domain
         Airbus
     }
 
+
+
     public class Plane
     {
         public int PlaneId { get; set; }
@@ -19,13 +21,24 @@ namespace AM.ApplicationCore.Domain
 
         public DateTime ManufactureDate { get; set; }
 
-        public  PlaneType planeType { get; set; }
+        public PlaneType PlaneType { get; set; }
 
         public ICollection <Flight> Flights { get; set;}
 
         public override string? ToString()
         {
-            return base.ToString();
+            return $"Plane de type : {planeType}, Capacité : {Capacity}, Date de fabrication : {ManufactureDate:dd/MM/yyyy}";
         }
+
+       /* public static Plane BoingPlane = new Plane { PlaneType = PlaneType.Boing, Capacity = 150, ManufactureDate = new DateTime(2015, 02, 03) };
+
+        public Plane() { }
+
+        public Plane(int capacity, DateTime manufactureDate, PlaneType planeType)
+        {
+            Capacity = capacity;
+            ManufactureDate = manufactureDate;
+            this.PlaneType = planeType;
+        }*/
     }
 }
