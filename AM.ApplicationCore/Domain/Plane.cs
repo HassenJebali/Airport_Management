@@ -27,7 +27,7 @@ namespace AM.ApplicationCore.Domain
 
         public override string? ToString()
         {
-            return $"Plane de type : {planeType}, Capacité : {Capacity}, Date de fabrication : {ManufactureDate:dd/MM/yyyy}";
+            return $"Plane de type : {PlaneType}, Capacité : {Capacity}, Date de fabrication : {ManufactureDate:dd/MM/yyyy}";
         }
 
        /* public static Plane BoingPlane = new Plane { PlaneType = PlaneType.Boing, Capacity = 150, ManufactureDate = new DateTime(2015, 02, 03) };

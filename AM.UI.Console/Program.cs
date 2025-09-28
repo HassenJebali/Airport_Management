@@ -2,6 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 using AM.ApplicationCore.Domain;
+using AM.ApplicationCore.Services;
 //using AM.ApplicationCore.Services;
 /*
 Plane plane = new Plane();
@@ -29,7 +30,7 @@ Console.ReadLine();*/
 
 
 Passenger P1 = new Passenger
-{ FirstName = "steve", LastName = "jobs", EmailAdress = "steve.jobs@000.us" };
+{ FirstName = "steve", LastName = "jobs", EmailAddress = "steve.jobs@000.us" };
 Console.WriteLine("La méthode passenger");
 Console.WriteLine(P1.CheckProfile("steve", "jobs"));
 Console.WriteLine(P1.CheckProfile("steve","jobs",""));
@@ -38,14 +39,14 @@ Staff s1 = new Staff
 {
     FirstName = "steve",
     LastName = "jobs",
-    EmailAdress = "steve.jobs@000.us"
+    EmailAddress = "steve.jobs@000.us"
 };
 
 Traveller t1 = new Traveller
 {
     FirstName = "steve",
     LastName = "jobs",
-    EmailAdress = "steve.jobs@000.us"
+    EmailAddress = "steve.jobs@000.us"
 };
 
 Console.WriteLine("-----P1------");
@@ -55,3 +56,13 @@ s1.PassengerType();
 Console.WriteLine("------T1-----");
 t1.PassengerType();
 Console.ReadLine();
+
+
+ServiceFlight sf = new ServiceFlight();
+sf.Flights= TestData.listFlights;
+
+Console.WriteLine("=== Vols vers Paris ===");
+foreach (var date in sf.GetFlightDates("Paris"))
+{
+    Console.WriteLine(date);
+}
