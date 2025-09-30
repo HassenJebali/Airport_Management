@@ -27,7 +27,7 @@ namespace AM.ApplicationCore.Domain
             TelNumber = telNumber;
         }*/
 
-        public ICollection<Flight> Flights { get; set; }
+        public virtual ICollection<Flight> Flights { get; set; }
 
         public override string? ToString()
         {
