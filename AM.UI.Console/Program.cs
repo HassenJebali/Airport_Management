@@ -55,8 +55,8 @@ Console.WriteLine("-------S1----");
 s1.PassengerType();
 Console.WriteLine("------T1-----");
 t1.PassengerType();
-Console.ReadLine();
 
+Console.WriteLine("-----------");
 
 ServiceFlight sf = new ServiceFlight();
 sf.Flights= TestData.listFlights;
@@ -66,3 +66,17 @@ foreach (var date in sf.GetFlightDates("Paris"))
 {
     Console.WriteLine(date);
 }
+
+Console.WriteLine("-----------");
+
+PassengerExtension pe = new PassengerExtension
+{
+    FirstName = "hassen",
+    LastName = "jebali",
+    EmailAddress = "hj0000@55.tn"
+};
+
+Console.WriteLine(pe.UpperFullName(pe));
+Console.WriteLine(pe.UpperFullName(P1));
+Console.WriteLine(pe.UpperFullName(t1));
+Console.WriteLine(pe.UpperFullName(s1));
