@@ -31,6 +31,7 @@ namespace AM.Infrastructure
             modelBuilder.ApplyConfiguration(new PlaneConfiguration());
             modelBuilder.ApplyConfiguration(new FlightConfiguration());
             modelBuilder.ApplyConfiguration(new PassengerConfiguration());
+            modelBuilder.ApplyConfiguration(new TicketConfiguration()); 
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

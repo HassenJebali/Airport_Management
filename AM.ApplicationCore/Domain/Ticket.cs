@@ -19,10 +19,10 @@ namespace AM.ApplicationCore.Domain
 
         public int FlightId { get; set; }
         [ForeignKey("FlightID")]
-        public virtual ICollection<Flight> Flights { get; set; }
+        public virtual Flight Flights { get; set; }
 
         public int  Id { get; set; }
         [ForeignKey("ID")]
-        public virtual ICollection<Passenger> Passengers { get; set; }
+        public virtual Passenger Passengers { get; set; }
     }
 }
