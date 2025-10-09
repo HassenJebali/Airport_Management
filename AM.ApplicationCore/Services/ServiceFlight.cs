@@ -200,7 +200,10 @@ namespace AM.ApplicationCore.Services
         {
             var query1 =  from f in Flights
                           where f.Plane == plane
-                          select new { f.Destination, f.FlightDate } ;
+                          select new { 
+                              f.Destination, 
+                              f.FlightDate 
+                          };
             foreach (var f in Flights)
             {
                 Console.WriteLine($"Flight details: {query1.ToString()}");

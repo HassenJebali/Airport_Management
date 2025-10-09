@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AM.ApplicationCore.Domain;
+using AM.Infrastructure.Configuration;
 using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -23,6 +24,19 @@ namespace AM.Infrastructure
         {
             optionsBuilder.UseLazyLoadingProxies().UseSqlServer(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = AirportManagementDB; Integrated Security = True; ");
             base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+            modelBuilder.ApplyConfiguration(new FlightConfiguration());
+            modelBuilder.ApplyConfiguration(new PassengerConfiguration());
+        }
+
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.Properties<DateTime>()
+                .HaveColumnType("date");
         }
     }
 }
