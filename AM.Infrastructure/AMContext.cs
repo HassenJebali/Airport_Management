@@ -18,6 +18,7 @@ namespace AM.Infrastructure
         public DbSet<Passenger> Passeengers { get; set; }
         public DbSet<Staff> Staff { get; set; }
         public DbSet<Traveller> Travellers { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -37,7 +38,7 @@ namespace AM.Infrastructure
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
             configurationBuilder.Properties<DateTime>()
-                .HaveColumnType("date");
+                .HaveColumnType("datetime2");
         }
     }
 }

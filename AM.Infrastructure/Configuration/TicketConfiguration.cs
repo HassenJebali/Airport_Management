@@ -15,11 +15,11 @@ namespace AM.Infrastructure.Configuration
     {
         public void Configure(EntityTypeBuilder<Ticket> builder) { 
             
-            builder.HasKey(t =>new { t.IdTicket, t.FlightId, t.Id });
+            builder.HasKey(t =>new { t.IdTicket, t.FlightId, t.IdPassenger });
 
             builder.HasOne(t => t.Passengers)
                 .WithMany(p => p.Tickets)
-                .HasForeignKey(t => t.Id);
+                .HasForeignKey(t => t.IdPassenger);
 
             builder.HasOne(t => t.Flights )
                 .WithMany(f => f.Tickets)

@@ -9,6 +9,7 @@ namespace AM.ApplicationCore.Interface
 {
     public interface IServiceFlight{
         public List<DateTime> GetFlightDates(string destination);
+       
         public void GetFlights(string filterType, string filterValue);
 
         public void ShowFlightDetails(Plane plane);
@@ -18,7 +19,9 @@ namespace AM.ApplicationCore.Interface
         public double DurationAverage(string destination);
 
         public IEnumerable<Flight> OrderedDurationFlights();
+       
         public IEnumerable<Traveller> SeniorTravellers(Flight flight);
+       
         public void DestinationGroupedFlights();
 
 

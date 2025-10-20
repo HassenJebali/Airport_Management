@@ -13,10 +13,10 @@ namespace AM.Infrastructure.Configuration
     {
         public void Configure(EntityTypeBuilder<Passenger> builder) {
 
-            builder.HasDiscriminator<int>("IsTraveller")
-                .HasValue<Passenger>(0)
-                .HasValue<Traveller>(1)
-                .HasValue<Staff>(2);
+            builder.HasDiscriminator<String>("IsTraveller")
+                .HasValue<Passenger>("0")
+                .HasValue<Traveller>("1")
+                .HasValue<Staff>("2");
 
         }
     }

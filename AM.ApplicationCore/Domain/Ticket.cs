@@ -15,14 +15,13 @@ namespace AM.ApplicationCore.Domain
         public string Siege { get; set; }
 
         public bool VIP { get; set; }
-        public Ticket(){}
+   
 
         public int FlightId { get; set; }
-        [ForeignKey("FlightID")]
         public virtual Flight Flights { get; set; }
 
-        public int  Id { get; set; }
-        [ForeignKey("ID")]
+        public int  IdPassenger { get; set; }
+    
         public virtual Passenger Passengers { get; set; }
     }
 }

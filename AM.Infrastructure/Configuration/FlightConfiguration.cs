@@ -9,7 +9,6 @@ namespace AM.Infrastructure.Configuration
     {
         public void Configure(EntityTypeBuilder<Flight> builder) {
 
-            builder.HasKey(f => f.FlightId);
 
             builder.HasMany(f => f.Passengers)
                 .WithMany(p => p.Flights)
@@ -19,7 +18,7 @@ namespace AM.Infrastructure.Configuration
             builder.HasOne(f => f.Plane)
                 .WithMany(p => p.Flights)
                 .HasForeignKey(f => f.PlaneId)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.ClientSetNull);
         
         }
     }
